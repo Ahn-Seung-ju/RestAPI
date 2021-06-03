@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.EmpajaxDao">
+	
+	<insert id="insert" parameterType="vo.Empajax">
+		insert into empajax(empno, ename, sal)
+		values(#{empno}, #{ename}, #{sal})
+	</insert>
+	
+	<update id="update" parameterType="vo.Empajax">
+		update empajax
+		set ename=#{ename}, sal=#{sal}
+		where empno = #{empno}
+	</update>	
+	
+	<delete id="delete">
+		delete from empajax where empno = #{empno}
+	</delete>
+	
+	<select id="getAllEmp" resultType="vo.Empajax">
+		SELECT * FROM EMPAJAX
+	</select>
+	
+	<select id="getEmp" resultType="vo.Empajax">
+		SELECT * FROM EMPAJAX WHERE empno = #{empno}
+	</select>
+</mapper>
